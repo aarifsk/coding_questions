@@ -22,6 +22,8 @@ class Solution:
             target_info[num] = index
         for index, num in enumerate(nums):
             if target - num in target_info.keys():
+                if index == target_info[target - num]:
+                    continue
                 answer.append(index)
                 answer.append(target_info[target - num])
                 break
