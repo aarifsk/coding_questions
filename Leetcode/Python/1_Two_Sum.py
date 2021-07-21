@@ -1,33 +1,23 @@
 """
 1. Two Sum
+Given array of integers nums and target integer,
+return indices of two numbers whose sum is target.
 Difficulty :- Easy
 
 https://leetcode.com/problems/two-sum/
 Input: nums = [2,7,11,15], target = 9
 Output: [0,1]
 
-author:- aarifsk
+author:- sainiop
 """
-
-
 class Solution:
-    def __init__(self):
-        pass
-
     @staticmethod
-    def two_sum(nums, target):
-        answer = []
-        target_info = {}
-        for index, num in enumerate(nums):
-            target_info[num] = index
-        for index, num in enumerate(nums):
-            if target - num in target_info.keys():
-                if index == target_info[target - num]:
-                    continue
-                answer.append(index)
-                answer.append(target_info[target - num])
-                break
-        return answer
+    def twoSum(nums, target):
+        target_comp = {}
+        for idx, num in enumerate(nums):
+            diff = target - num
 
-
-print(Solution.two_sum([2, 7, 11, 15], 9))
+            if num in target_comp:
+                return [idx, target_comp[num]]
+            else:
+                target_comp[diff] = idx
