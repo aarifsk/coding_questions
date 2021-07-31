@@ -16,10 +16,10 @@ class Solution:
 
         elif x > 0:
             while x > 0:
-                reminder = x % 10
+                remainder = x % 10
                 x = x // 10
 
-                reversed = reminder + reversed * 10
+                reversed = remainder + reversed * 10
             if reversed < -2147483648 or reversed > 2147483647:
                 return int("0")
             return reversed
@@ -27,10 +27,10 @@ class Solution:
         elif x < 0:
             x = -x
             while x > 0:
-                reminder = x % 10
+                remainder = x % 10
                 x = x // 10
 
-                reversed = reminder + reversed * 10
+                reversed = remainder + reversed * 10
             if reversed < -2147483648 or reversed > 2147483647:
                 return int("0")
             return -reversed
