@@ -18,7 +18,7 @@ author:- aarifsk
 
 
 class Solution:
-    def gray_code(self, n: int) -> List[int]:
+    def grayCode(self, n: int) -> List[int]:
         answer = []
         for idx in range(2**n):
             answer.append(idx ^ (idx >> 1))
